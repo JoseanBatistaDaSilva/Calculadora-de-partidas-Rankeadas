@@ -1,0 +1,34 @@
+def perguntar():
+    Victory = int(input("Quantas partidas você venceu? "))
+    Defeat = int(input("Quantas partidas você perdeu? "))
+    Rank = Victory - Defeat
+    return Rank  # Retornar o valor de Rank
+
+def Comparar(Rank):  # Recebe Rank como argumento
+    if Rank < 10:
+        Level = "Ferro"
+    elif 11 <= Rank < 20:
+        Level = "Bronze"
+    elif 21 <= Rank < 50:
+        Level = "Prata"
+    elif 51 <= Rank < 80:
+        Level = "Ouro"
+    elif 81 <= Rank < 90:
+        Level = "Diamante"
+    elif 91 <= Rank < 100:
+        Level = "Lendário"
+    elif Rank >= 101:
+        Level = "Imortal"
+
+    mensagem = f"O Herói tem saldo de {Rank} e está no nível de {Level}"
+    print(mensagem)
+    return 
+
+def main():
+    while True:
+        Rank = perguntar()  # Chama a função perguntar() para obter Rank
+        Comparar(Rank)  # Chama a função Comparar() com o valor de Rank
+
+# Se a função main() for chamada diretamente, ela será executada
+if __name__ == "__main__":
+    main()
